@@ -29,7 +29,7 @@ app.register(order, { prefix: "/order" });
 const port = 3000;
 const startServer = async () => {
   try {
-    app.listen({ port }, () => {
+    app.listen({ port, host: "0.0.0.0." }, () => {
       console.log(`Server started on port ${port}`);
       DbConnector();
     });
