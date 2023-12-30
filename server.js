@@ -6,10 +6,12 @@ import Products from "./routes/products.js";
 import category from "./routes/category.js";
 import order from "./routes/order.js";
 import multer from "fastify-multer";
+import cors from "@fastify/cors";
 
 const app = fastify({
   logger: true,
 });
+await app.register(cors);
 app.register(multer.contentParser);
 
 dotenv.config();
@@ -20,9 +22,9 @@ app.register(category, { prefix: "/category" });
 
 app.register(order, { prefix: "/order" });
 
-app.all("*", (req, reply) => {
-  reply.send("No route found");
-});
+// app.all("*", (req, reply) => {
+//   reply.send("No route found");
+// });
 
 const port = 3000;
 const startServer = async () => {

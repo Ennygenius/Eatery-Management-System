@@ -21,7 +21,7 @@ const Staffs = new mongoose.Schema(
     gender: {
       type: String,
       enum: {
-        values: ["MALE", "Female"],
+        values: ["MALE", "FEMALE"],
         message: "{VALUE} is not supported",
       },
     },

@@ -16,7 +16,18 @@ export const getAllOrder = async (_req, reply) => {
   }
 };
 
-export const createOrder = async (req, reply) => {};
+export const createOrder = async (req, reply) => {
+  const {
+    name,
+    phoneNumber,
+    orders,
+    totalPrice,
+    payment_date,
+    payment_status,
+    payment_medium,
+    licensedBy,
+  } = req.body;
+};
 
 export const deleteOrder = async (req, reply) => {
   try {

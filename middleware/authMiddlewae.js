@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
-import Order from "../models/bills";
+import Order from "../models/bills.js";
 
 dotenv.config();
 
@@ -22,7 +22,7 @@ const validateToken = (req, reply, done) => {
       return reply.send({ Err: "Unauthorized" });
     }
   } catch (error) {
-    return reply.send({ Err: "An Error or Anauthorized", error });
+    return reply.send({ Err: "An Error Occured or Anauthorized", error });
   }
 };
 
